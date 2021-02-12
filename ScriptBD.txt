@@ -1,0 +1,52 @@
+CREATE SCHEMA `controle_escola` ;
+
+CREATE TABLE `controle_escola`.`escolas` (
+  `id_escola` INT NOT NULL AUTO_INCREMENT,
+  `nome_escola` VARCHAR(255) NULL,
+  `endereco` VARCHAR(255) NULL,
+  `data` VARCHAR(45) NOT NULL,
+  `situacao` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_escola`));
+
+CREATE TABLE `controle_escola`.`turmas` (
+  `id_turma` INT NOT NULL AUTO_INCREMENT,
+  `ano` VARCHAR(45) NULL,
+  `nivel_ensino` VARCHAR(45) NULL,
+  `serie` VARCHAR(45) NULL,
+  `turno` VARCHAR(45) NULL,
+  `id_escola` INT NOT NULL,
+  PRIMARY KEY (`id_turma`),
+  INDEX `id_escola_idx` (`id_escola` ASC) VISIBLE,
+  CONSTRAINT `id_escola`
+    FOREIGN KEY (`id_escola`)
+    REFERENCES `controle_escola`.`escolas` (`id_escola`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `controle_escola`.`alunos` (
+  `id_aluno` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) NOT NULL,
+  `telefone` VARCHAR(14) NULL,
+  `e-mail` VARCHAR(100) NOT NULL,
+  `data_nascimento` VARCHAR(45) NULL,
+  `genero` VARCHAR(15) NULL,
+  PRIMARY KEY (`id_aluno`));
+
+CREATE TABLE `controle_escola`.`alunos_de_turmas` (
+  `id_aluno_de_turma` INT NOT NULL AUTO_INCREMENT,
+  `id_aluno` INT NOT NULL,
+  `id_turma` INT NOT NULL,
+  PRIMARY KEY (`id_aluno_de_turma`),
+  INDEX `id_aluno_idx` (`id_aluno` ASC) VISIBLE,
+  INDEX `id_turma_idx` (`id_turma` ASC) VISIBLE,
+  CONSTRAINT `id_aluno`
+    FOREIGN KEY (`id_aluno`)
+    REFERENCES `controle_escola`.`alunos` (`id_aluno`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_turma`
+    FOREIGN KEY (`id_turma`)
+    REFERENCES `controle_escola`.`turmas` (`id_turma`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
