@@ -20,14 +20,14 @@ CREATE TABLE `controle_escola`.`turmas` (
   CONSTRAINT `id_escola`
     FOREIGN KEY (`id_escola`)
     REFERENCES `controle_escola`.`escolas` (`id_escola`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION);
 
 CREATE TABLE `controle_escola`.`alunos` (
   `id_aluno` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NOT NULL,
   `telefone` VARCHAR(14) NULL,
-  `e-mail` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
   `data_nascimento` VARCHAR(45) NULL,
   `genero` VARCHAR(15) NULL,
   PRIMARY KEY (`id_aluno`));
@@ -42,11 +42,11 @@ CREATE TABLE `controle_escola`.`alunos_de_turmas` (
   CONSTRAINT `id_aluno`
     FOREIGN KEY (`id_aluno`)
     REFERENCES `controle_escola`.`alunos` (`id_aluno`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `id_turma`
     FOREIGN KEY (`id_turma`)
     REFERENCES `controle_escola`.`turmas` (`id_turma`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION);
 

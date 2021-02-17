@@ -5,9 +5,6 @@
 	<label for="validationCustom01" class="form-label">Nome do aluno</label>
 	<br>
 	<input class="form-control" type="text" name="nome_aluno" id="validationCustom01" placeholder="Insira o nome do aluno" required>
-	<div class="valid-feedback">
-      Looks good!
-    </div>
 	<br><br>
 	<label class="badge badge-secondary">Telefone</label>
 	<br>
@@ -30,6 +27,7 @@
 	<input class="form-control" type="text" name="genero" placeholder="Insira o genero do aluno" required>
 	<br><br>
 	<input class="btn btn-success" type="submit" value="Inserir aluno">
+	<a class="btn btn-danger" href="?pagina=alunos">Cancelar</a>
 </form>
 
 <?php } else { ?>
@@ -60,6 +58,7 @@
 				<input class="form-control" type="text" name="genero" placeholder="Insira o genero do aluno" value="<?php echo $linha['genero']; ?>" required>
 				<br><br>
 				<input class="btn btn-success" type="submit"  value="Editar aluno">
+				<a class="btn btn-danger" href="?pagina=alunos">Cancelar</a>
 			</form>
 
 		<?php } ?>

@@ -19,6 +19,7 @@
 	<input class="form-control" type="text" name="situacao" placeholder="Insira a situação da escola" required>
 	<br><br>
 	<input class="btn btn-success" type="submit" value="Inserir escola">
+	<a class="btn btn-danger" href="?pagina=escolas">Cancelar</a>
 </form>
 
 
@@ -46,6 +47,7 @@
 				<input  class="form-control" type="text" name="situacao" placeholder="Insira a situação da escola" value="<?php echo $linha['situacao']; ?>" required>
 				<br><br>
 				<input class="btn btn-success" type="submit"  value="Editar escola">
+				<a class="btn btn-danger" href="?pagina=escolas">Cancelar</a>
 			</form>
 
 		<?php } ?>

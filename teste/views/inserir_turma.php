@@ -22,7 +22,7 @@
 	<select class="form-control" name="escolha_escola">
 		<option>Selecione uma escola</option>
 		<?php
-			while($linha = mysqli_fetch_array($consulta_escolas)){
+			while($linha = mysqli_fetch_array($consulta_escolas2)){
 				echo '<option value="'.$linha['id_escola'].'">'.$linha['nome_escola'].'</option>';
 			}
 
@@ -30,6 +30,7 @@
 	</select>
 	<br>
 	<input class="btn btn-success" type="submit" value="Inserir turma">
+	<a class="btn btn-danger" href="?pagina=turmas">Cancelar</a>
 </form>
 
 <?php } else { ?>
@@ -62,6 +63,7 @@
 				<br><br>
 
 				<input class="btn btn-success" type="submit" value="Editar turma">
+				<a class="btn btn-danger" href="?pagina=turmas">Cancelar</a>
 			</form>
 		<?php } ?>
 	<?php } ?>

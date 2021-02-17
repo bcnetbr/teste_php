@@ -8,7 +8,7 @@
 		<option>Selecione a turma</option>
 		<?php
 			while($linha = mysqli_fetch_array($consulta_turmas)){
-				echo '<option value="'.$linha['id_turma'].'">'.$linha['ano']." ".$linha['nivel_ensino']." ".$linha['serie']." ".$linha['turno'].'</option>';
+				echo '<option value="'.$linha['id_turma'].'">'.$linha['nome_escola']." ".$linha['ano']." ".$linha['nivel_ensino']." ".$linha['serie']." ".$linha['turno'].'</option>';
 			}
 
 		?>
@@ -29,5 +29,6 @@
 	<br><br>
 
 	<input class="btn btn-success" type="submit" value="Matricular aluno no curso">
+	<a class="btn btn-danger" href="?pagina=matriculas">Cancelar</a>
 
 </form>
