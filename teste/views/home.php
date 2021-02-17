@@ -1,0 +1,1 @@
+<h1>Bem vindos ao controle de escola!</h1>
