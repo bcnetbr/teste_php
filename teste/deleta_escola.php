@@ -1,14 +1,16 @@
 <?php
+
+//Inclui as configurações do banco de dados 
 include 'db.php';
+
+//Variavel que recebe o dado do formulario via get
 $id_escola = $_GET['id_escola'];
 
-
-//$query = "DELETE FROM ALUNOS_DE_TURMAS WHERE ID_ALUNO  = $id_aluno";
-
+//Exclui os dados da escola do banco de dados
 $query2 = "DELETE FROM ESCOLAS WHERE ID_ESCOLA  = $id_escola";
 
-//mysqli_query($conexao, $query);
-
+//Executa o comando sql no banco de dados
 mysqli_query($conexao, $query2);
 
+//Retorna para pagina de exibição das escolas
 header('location:index.php?pagina=escolas');

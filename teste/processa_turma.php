@@ -10,7 +10,7 @@ $serie = $_POST['serie'];
 $turno = $_POST['turno'];
 $id_escola = $_POST['escolha_escola'];
 
-//Inseri os dados da turama no banco de dados
+//Inseri os dados da turma no banco de dados
 $query = "INSERT INTO TURMAS(ano, nivel_ensino, serie, turno, id_escola) VALUES ('$ano', '$nivel', '$serie', '$turno', $id_escola)";
 
 //Executa o comando sql no banco de dados
